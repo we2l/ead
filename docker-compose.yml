@@ -4,7 +4,7 @@ services:
     laravel_8:
         build: 
             args: 
-                user: carlos
+                user: weslley
                 uid: 1000
             context: ./
             dockerfile: Dockerfile
@@ -42,8 +42,9 @@ services:
             MYSQL_USER: ${DB_USERNAME}
         volumes: 
             - ./.docker/mysql/dbdata:/var/lib/mysql
+        env_file: .env
         ports: 
-            - 3388:3309
+            - 3388:3306
         networks: 
             - laravel-eti
 
@@ -51,7 +52,7 @@ services:
     queue:
         build: 
             args: 
-                user: carlos
+                user: weslley
                 uid: 1000
             context: ./
             dockerfile: Dockerfile
