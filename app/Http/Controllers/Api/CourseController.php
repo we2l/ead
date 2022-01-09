@@ -17,10 +17,8 @@ class CourseController extends Controller
     }
 
     public function index()
-    {
-        
+    {  
         return CourseResource::collection($this->repository->getAllCourses());
-        
     }
 
     public function show($id)
